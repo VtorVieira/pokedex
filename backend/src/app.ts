@@ -1,6 +1,6 @@
 import * as express from 'express';
 import 'express-async-errors';
-import * as cors from 'cors';
+// import * as cors from 'cors';
 import tokenRouter from './routers/token.routes';
 import usersRouter from './routers/users.routes';
 import pokemonsRouter from './routers/pokemon.routes';
@@ -17,7 +17,6 @@ class App {
     this.app.use('/', usersRouter);
     this.app.use('/pokemon', pokemonsRouter);
     this.app.use('/token', tokenRouter);
-    this.app.use(cors());
 
     this.app.use((
       err: Error,
@@ -41,6 +40,7 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    // this.app.use(cors());
   }
 
   public start(PORT: string | number): void {
