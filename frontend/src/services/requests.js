@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'pokedex-production-f777.up.railway.app',
+  baseURL: 'https://pokedex-production-f777.up.railway.app',
 });
 
 export const verifyToken = async (token) => {
