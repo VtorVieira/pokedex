@@ -6,6 +6,8 @@ export interface IProps {
   handleSignIn: Function,
   handleSingUp: Function,
   changeForm: Function,
+  handleClose: Function,
+  successReq: string,
   form: IUser,
   requestFailed: {
     message: string;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { useNavigate } from 'react-router-dom';
 import { IUser } from '../interfaces/IUser';
 import { postLogin, postRegister } from '../services/requests';
@@ -13,6 +14,7 @@ function Login() {
     password: '',
   });
   const [requestFailed, setRequestFailed] = useState<IErrorMEssage>({ message: '' });
+  const [successReq, setSuccessReq] = useState<any>('Ola');
   const [formType, setFormType] = useState<string>('Sign In');
   const navigate = useNavigate();
 
@@ -37,11 +39,14 @@ function Login() {
   const handleSingUp = async () => {
     try {
       await postRegister(form?.name, form?.fone, form?.email, form?.password);
-      alert('Usuário criado com sucesso!');
-      navigate('/', { replace: true });
+      setSuccessReq('Usuário criado com sucesso!')
     } catch (error: any) {
       setRequestFailed({ message: error.response.data.message });
     }
+  };
+  
+  const handleClose = () => {
+    navigate('/', { replace: true });
   };
 
   const changeForm = (value: string) => {
@@ -56,15 +61,19 @@ function Login() {
   };
 
   return (
-    <SignInUp
-      form={form}
-      formType={formType}
-      requestFailed={requestFailed}
-      changeForm={changeForm}
-      handleChange={handleChange}
-      handleSignIn={handleSignIn}
-      handleSingUp={handleSingUp}
-  />
+    <AlertDialog.Root>
+      <SignInUp
+        form={form}
+        formType={formType}
+        requestFailed={requestFailed}
+        successReq={successReq}
+        changeForm={changeForm}
+        handleClose={handleClose}
+        handleChange={handleChange}
+        handleSignIn={handleSignIn}
+        handleSingUp={handleSingUp}
+      />
+    </AlertDialog.Root>
   );
 }
 
