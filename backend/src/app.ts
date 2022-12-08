@@ -17,6 +17,7 @@ class App {
     this.app.use('/', usersRouter);
     this.app.use('/pokemon', pokemonsRouter);
     this.app.use('/token', tokenRouter);
+    this.app.use(cors());
 
     this.app.use((
       err: Error,
@@ -40,7 +41,6 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
-    this.app.use(cors());
   }
 
   public start(PORT: string | number): void {
