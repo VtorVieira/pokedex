@@ -4,10 +4,10 @@
   "description": "",
   "main": "./build/server",
   "scripts": {
-    "build": "npx -y tsc",
+    "build": "npx tsc",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "prestart": "npm run build && npm run db:reset",
-    "start": "node .",
+    "start": "node ./build/server.js",
     "predev": "npm run build && npm rum db:reset",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts"
   },
