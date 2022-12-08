@@ -5,9 +5,7 @@
   "main": "./build/server",
   "scripts": {
     "build": "npx tsc",
-    "start": "node ./build/server.js",
-    "predev": "npm run build && npm rum db:reset",
-    "dev": "nodemon --watch \"./src/**\" ./src/server.ts"
+    "start": "node ./build/server.js"
   },
   "keywords": [],
   "author": "",
