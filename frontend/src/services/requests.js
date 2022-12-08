@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: `http://localhost:${process.env.REACT_APP_API_PORT || '4001'}`,
+  baseURL: `http://localhost:${process.env.PORT}`,
 });
 
 export const verifyToken = async (token) => {
