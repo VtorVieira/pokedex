@@ -31,7 +31,7 @@ export function SignInUp(
             src={logo}
             alt="Logo" />
         </div>
-        <div className='flex justify-center items-center mt-10 text-2xl text-[#fff]'>
+        <div className='flex justify-center items-center mt-10 text-2xl text-[#fff] sm:mt-4 lg:mt-10'>
           {formType === 'Sign In' ? 'Login' : 'Cadastro'}
         </div>
         <div className='flex flex-col gap-2 justify-center items-center mt-4'>
@@ -39,10 +39,10 @@ export function SignInUp(
             formType === 'Sign Up'
             &&
             (
-              <>
-                <div>
+              <div className='w-11/12 xl:w-96'>
+                <div className='mb-2'>
                   <input
-                    className='rounded-md text-slate-800 placeholder-gray-500 w-80 h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
+                    className='rounded-md text-slate-800 placeholder-gray-500 w-full h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
                     id="name"
                     name="name"
                     value={form.name}
@@ -53,7 +53,7 @@ export function SignInUp(
                 </div>
                 <div>
                   <input
-                    className='rounded-md text-slate-800 placeholder-gray-500 w-80 h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
+                    className='rounded-md text-slate-800 placeholder-gray-500 w-full h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
                     id="fone"
                     name="fone"
                     value={form.fone}
@@ -62,30 +62,32 @@ export function SignInUp(
                     onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
                   />
                 </div>
-              </>
+              </div>
             )
           }
-          <div>
-            <input
-              className='rounded-md text-slate-800 placeholder-gray-500 w-80 h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
-              id="email"
-              name="email"
-              value={form.email}
-              type="text"
-              placeholder={formType === 'Sign In' ? 'Informe o seu email' : 'Cadastre o seu email'}
-              onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
-            />
-          </div>
-          <div>
-            <input
-              className='rounded-md text-slate-800 placeholder-gray-500 w-80 h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
-              id="password"
-              name="password"
-              value={form.password}
-              type="password"
-              placeholder={formType === 'Sign In' ? 'Informe o sua senha' : 'Cadastre a sua senha'}
-              onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
-            />
+          <div className='w-11/12 xl:w-96'>
+            <div className='mb-2'>
+              <input
+                className='rounded-md text-slate-800 placeholder-gray-500 w-full h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
+                id="email"
+                name="email"
+                value={form.email}
+                type="text"
+                placeholder={formType === 'Sign In' ? 'Informe o seu email' : 'Cadastre o seu email'}
+                onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
+              />
+            </div>
+            <div className='mb-2'>
+              <input
+                className='rounded-md text-slate-800 placeholder-gray-500 w-full h-10 p-3 shadow-lg focus:outline-none focus:ring focus:ring-blue-400 xl:w-96'
+                id="password"
+                name="password"
+                value={form.password}
+                type="password"
+                placeholder={formType === 'Sign In' ? 'Informe o sua senha' : 'Cadastre a sua senha'}
+                onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
+              />
+            </div>
           </div>
           <div className='w-80 border-red-500 border-l-4 xl:w-96'>
             <p className=' text-[#ffff] ml-2'>{requestFailed.message}</p>
@@ -93,7 +95,7 @@ export function SignInUp(
         </div>
         <div className='flex justify-center items-center mt-8'>
         <AlertDialog.Trigger
-          className='rounded-xl w-80 h-11 bg-[#5e17eb] text-[#fff] xl:w-96'
+          className='rounded-xl w-11/12 h-11 bg-[#5e17eb] text-[#fff] xl:w-96'
           type='button'
           onClick={formType === 'Sign In' ? handleSignIn : handleSingUp as any}
         >
@@ -116,7 +118,7 @@ export function SignInUp(
         {formType === 'Sign In'
           ? <div className='flex justify-center items-center mt-4'>
             <button
-              className='rounded-xl w-80 h-11 bg-[#5e17eb] text-[#fff] xl:w-96'
+              className='rounded-xl w-11/12 h-11 bg-[#5e17eb] text-[#fff] xl:w-96'
               type='button'
               onClick={() => changeForm('Sign Up')}
             >
@@ -125,11 +127,11 @@ export function SignInUp(
           </div>
           : <div className='flex justify-center items-center mt-4'>
             <button
-              className='rounded-xl w-80 h-11 bg-[#5e17eb] text-[#fff] xl:w-96'
+              className='rounded-xl w-11/12 h-11 bg-[#5e17eb] text-[#fff] xl:w-96'
               type='button'
               onClick={() => changeForm('Sign In')}
             >
-              {formType === 'Sign Up' && 'Volta para Login'}
+              {formType === 'Sign Up' && 'Voltar para Login'}
             </button>
           </div>
         }
