@@ -4,6 +4,7 @@ import verifyToken from '../utils/verifyToken';
 class TokenController {
   constructor() { }
 
+  // responsável por validar o token recebido para autenticação do front
   public validateUser = async (req: Request, res: Response) => {
     const { authorization } = req.headers;
     const user = verifyToken(authorization as string);

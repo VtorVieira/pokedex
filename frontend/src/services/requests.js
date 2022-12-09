@@ -30,6 +30,12 @@ export const postRegister = async (name, fone, email, password) => {
 export const getAllPokemonBD = async (offset) => {
   const { data } = await api.post('/pokemon', {offset});
 
+  /*
+    Necessário restruturar o objeto recebido do back
+
+    Montando para a estrutura esperada na pagina principal
+      types/abilities: veem um conjunto de informações em string, sendo necessário transforma-los em array
+  */
   const newData = data.map((e) => {
       return {
         id: e.id,
@@ -45,6 +51,12 @@ export const getAllPokemonBD = async (offset) => {
 
   return newData;
 };
+
+/* 
+  Através da API do pokemon, criei um retorno para montar o seeders
+  com as informações que quis apresentar na tela principal,
+  criei uma lista com 151 pokemons.
+*/ 
 
 // export const getAllPokemon = async () => {
 //   const API = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151'

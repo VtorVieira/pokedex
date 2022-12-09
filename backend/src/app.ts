@@ -14,6 +14,8 @@ class App {
 
     this.config();
 
+
+    // Rotas da API 
     this.app.use('/', usersRouter);
     this.app.use('/pokemon', pokemonsRouter);
     this.app.use('/token', tokenRouter);

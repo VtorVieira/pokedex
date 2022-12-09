@@ -6,7 +6,11 @@ const router = Router();
 
 const usersController = new UsersController();
 
-router.get('/all', usersController.getAllUser);
+/*
+  As rotas de users passam por uma validação do campos
+  para que só consiga acessar se ao menos essa informações
+  forem validas na regra de negócio.
+*/
 
 router.post(
   '/login',

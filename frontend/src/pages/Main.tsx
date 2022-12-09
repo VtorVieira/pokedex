@@ -6,6 +6,7 @@ import Pokemons from '../components/Pokemons';
 
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { Footer } from '../components/Footer';
+import Loading from '../components/Loading';
 
 function Main() {
   const [pokemon, setPokemon] = useState<string[]>([]);
@@ -65,31 +66,35 @@ function Main() {
   }
     
   return(
-    <div className='bg-cover bg-center bg-[url("../images/background.svg")]'>
-      <Header />
-      <Pokemons 
-        pokemon={pokemon}
-        loading={loading}
-      />
-      <div className='flex justify-center text-5xl p-2 gap-4'>
-        { previous > 0
-          && <div className='flex justify-center items-center'>
-            <p className='text-white font-bold text-lg' onClick={previousPage}>Página <br/>Anterior</p>
-            <button type='button' onClick={previousPage}>
-              <GrCaretPrevious color='brand' />
-            </button>
-          </div>
-        }
-        { next < 150 
-          && <div className='flex justify-center items-center'>
-            <button type='button' onClick={nextPage}>
-              <GrCaretNext color='brand' /> 
-            </button>
-            <p className='text-white font-bold text-lg' onClick={nextPage}>Proxima <br />Página</p>
-          </div>
-        }
+    <div>
+      {
+        loading && <Loading />
+      }
+      <div className='bg-cover bg-center bg-[url("../images/background.svg")]'>
+        <Header />
+        <Pokemons 
+          pokemon={pokemon}
+        />
+        <div className='flex justify-center text-5xl p-2 gap-4'>
+          { previous > 0
+            && <div className='flex justify-center items-center'>
+              <p className='text-white font-bold text-lg' onClick={previousPage}>Página <br/>Anterior</p>
+              <button type='button' onClick={previousPage}>
+                <GrCaretPrevious color='brand' />
+              </button>
+            </div>
+          }
+          { next < 150 
+            && <div className='flex justify-center items-center'>
+              <button type='button' onClick={nextPage}>
+                <GrCaretNext color='brand' /> 
+              </button>
+              <p className='text-white font-bold text-lg' onClick={nextPage}>Proxima <br />Página</p>
+            </div>
+          }
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

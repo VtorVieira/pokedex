@@ -1,15 +1,8 @@
 import { Request, Response } from 'express';
-import IToken from '../interfaces/token.interace';
 import UserService from '../services/users.services';
 
 class UsersController {
   constructor(private _userService = new UserService()) { }
-
-  public getAllUser = async (req: Request, res: Response) => {
-    const all = await this._userService.getAllUser();
-
-    res.status(200).json(all);
-  };
 
   public getUser = async (req: Request, res: Response) => {
     const { email, password } = req.body;
@@ -19,6 +12,7 @@ class UsersController {
       fone: ''
     });
 
+    // repassando o token, caso sucesso.
     res.status(200).json({ token });
   };
 

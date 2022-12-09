@@ -28,11 +28,13 @@ function Login() {
   };
 
   const handleSignIn = async () => {
+    setLoading(true);
     try {
       const generateToken = await postLogin(form?.email, form?.password);
       localStorage.setItem('token', JSON.stringify(generateToken));
       navigate('/main', { replace: true });
     } catch (error: any) {
+      setLoading(false);
       setRequestFailed({ message: error.response.data.message });
     }
   };
