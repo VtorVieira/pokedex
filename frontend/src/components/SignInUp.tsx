@@ -2,6 +2,7 @@ import React, { ChangeEventHandler } from 'react';
 import { IProps } from '../interfaces/IProps';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import logo from '../images/logo.svg';
+import Loading from './Loading';
 
 export function SignInUp(
   { formType,
@@ -10,6 +11,7 @@ export function SignInUp(
     handleSingUp,
     changeForm,
     handleClose,
+    loading,
     successReq,
     form,
     requestFailed,
@@ -19,6 +21,9 @@ export function SignInUp(
     <div
       className='flex justify-center h-screen font-bold text-lg bg-cover bg-center bg-[url("../images/background.svg")] sm:items-center'
     >
+      {
+       loading && <Loading />
+      }
       <form className='bg-gradient-to-r from-indigo-800 to-blue-400 h-screen w-screen border-spacing-0 border-solid sm:w-96 sm:border-2 sm:rounded-lg sm:h-2/3 md:w-2/4 md:h-3/4 lg:h-2/3 lg:w-2/4 xl:w-1/3 2xl:w-1/3'>
         <div className='flex justify-center items-center w-full mt-2'>
           <img

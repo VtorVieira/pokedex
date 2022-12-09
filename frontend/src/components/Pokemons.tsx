@@ -1,9 +1,13 @@
 import React from 'react';
 import { IPokemons } from '../interfaces/IPokemons';
+import Loading from './Loading';
 
-function Pokemons({pokemon}: string[] | any) {
+function Pokemons({pokemon, loading}: string[] | any) {
   return(
     <div className='grid mt-3 ml-2 mr-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 xl:ml-16 xl:mr-16 xl:mt-3'>
+      {
+       loading && <Loading />
+      }
       {pokemon.length > 0 
         && pokemon.map((pokemons: IPokemons) => (
           <div

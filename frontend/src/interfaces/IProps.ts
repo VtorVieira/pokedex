@@ -8,6 +8,7 @@ export interface IProps {
   changeForm: Function,
   handleClose: Function,
   successReq: string,
+  loading: boolean,
   form: IUser,
   requestFailed: {
     message: string;

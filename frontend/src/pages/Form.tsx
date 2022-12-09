@@ -14,8 +14,9 @@ function Login() {
     password: '',
   });
   const [requestFailed, setRequestFailed] = useState<IErrorMEssage>({ message: '' });
-  const [successReq, setSuccessReq] = useState<any>('Ola');
+  const [successReq, setSuccessReq] = useState<string>('');
   const [formType, setFormType] = useState<string>('Sign In');
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,10 +38,13 @@ function Login() {
   };
 
   const handleSingUp = async () => {
+    setLoading(true);
     try {
       await postRegister(form?.name, form?.fone, form?.email, form?.password);
       setSuccessReq('Usuário criado com sucesso!')
+      setLoading(false);
     } catch (error: any) {
+      setLoading(false);
       setRequestFailed({ message: error.response.data.message });
     }
   };
@@ -67,6 +71,7 @@ function Login() {
         formType={formType}
         requestFailed={requestFailed}
         successReq={successReq}
+        loading={loading}
         changeForm={changeForm}
         handleClose={handleClose}
         handleChange={handleChange}

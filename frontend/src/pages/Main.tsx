@@ -11,10 +11,12 @@ function Main() {
   const [pokemon, setPokemon] = useState<string[]>([]);
   const [next, setNext] = useState<number>(20);
   const [previous, setPrevious] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
   /* useEffect para carregamento da primeira lista de pokemons */
   useEffect(() => {
+    setLoading(true);
     async function getPokemons() {
       const localToken = JSON.parse(localStorage.getItem('token') as string) || [];
       const logged = await verifyToken(localToken.token);
@@ -22,34 +24,43 @@ function Main() {
         navigate('/');
       }
       setPokemon(await getAllPokemonBD(0));
+      setLoading(false);
     }
     getPokemons();
   },[navigate]);
 
   const nextPage = async () => {
+    setLoading(true);
     if(next === 140) {
       setNext((prevState) => prevState + 11);
       setPokemon(await getAllPokemonBD(next));
+      setLoading(false);
     } else if (next === 151) {
+      setLoading(false);
       return;
     } else {
       setNext((prevState) => prevState + 20);
       setPokemon(await getAllPokemonBD(next));
       setPrevious(next);
+      setLoading(false);
     }
   }
 
   const previousPage = async () => {
+    setLoading(true);
     if(previous <= 0) {
+      setLoading(false);
       return
     } else if (previous === 20) {
       setPrevious(0);
       setPokemon(await getAllPokemonBD(0));
-      setNext(20)
+      setNext(20);
+      setLoading(false);
     } else {
       setPrevious((prevState) => prevState - 20);
       setPokemon(await getAllPokemonBD(previous));
       setNext(previous);
+      setLoading(false);
     }
   }
     
@@ -58,6 +69,7 @@ function Main() {
       <Header />
       <Pokemons 
         pokemon={pokemon}
+        loading={loading}
       />
       <div className='flex justify-center text-5xl p-2 gap-4'>
         { previous > 0
