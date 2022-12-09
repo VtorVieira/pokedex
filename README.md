@@ -4,12 +4,12 @@
 ## Resumo BackEnd
 
 Aplicação consiste em criar uma API de pokemons, onde você ao acessar a pagina principal carrega uma lista de pokemons, e para acessar é necessário ter um cadastro, e é possível fazer login com **email** e **password**.
-A **API** foi desenvolvida em **NodeJS**, **Express** e **PostgreSQL**. Possui uma arquitetura **MSC** e ORM **Sequelize**. Também possui autenticação com **JWT**, e tratamento de erros com **express-async-errors**.
+A **API** foi desenvolvida em **NodeJS** com **TypeScript**, **Express** e **PostgreSQL**. Possui uma arquitetura **MSC** e ORM **Sequelize**. Também possui autenticação com **JWT**, e tratamento de erros com **express-async-errors**.
 
 ## Resumo FrontEnd
 
 Possui uma interface que consome a API desenvolvida no BackEnd, onde é possível se cadastrar e fazer login e vizualizar a lista de pokemons.
-Foi desenvolvido em **ReactJS**. A estilização foi feita com **Tailwind**, Radix Ui, e **Axios** para fazer as requisições à API.
+Foi desenvolvido em **ReactJS** com **TypeScript**. A estilização foi feita com **Tailwind**, Radix Ui, e **Axios** para fazer as requisições à API.
 
 ## Para acessar
 
