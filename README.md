@@ -13,7 +13,7 @@ Foi desenvolvido em **ReactJS** com **TypeScript**. A estilização foi feita co
 
 ## Para acessar
 
-Foi realizado um deploy do Backend na plataforma railway e o Frontend na plataforma vercel
+Foi realizado um deploy do Backend na plataforma **Railway** e o Frontend na plataforma **Vercel**
 
 Link: https://pokedex-eta-sooty.vercel.app/
   
