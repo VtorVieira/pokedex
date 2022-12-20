@@ -70,7 +70,7 @@ function Main() {
       {
         loading && <Loading />
       }
-      <div className='bg-cover bg-center bg-[url("../images/background.svg")]'>
+      <div>
         <Header />
         <Pokemons 
           pokemon={pokemon}

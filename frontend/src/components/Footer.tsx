@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export function Footer() {
   return (
-    <footer className='flex flex-col justify-center items-center bg-gradient-to-l from-indigo-600 to-blue-300 text-base mt-1 ml-4 mr-4 py-3 rounded-lg text-[#ffff] font-bold xl:text-xl xl:ml-16 xl:mr-16'>
+    <footer className='flex flex-col justify-center items-center bg-gradient-to-r from-indigo-400 to-blue-400 text-base mt-1 ml-2 mr-2 py-3 rounded-lg text-[#ffff] font-bold xl:text-xl'>
       <h3>PokeDex</h3>
       <div className='flex justify-center items-center text-base gap-3 xl:text-xl'>
         <p>Created by <span>Vitor Vieira</span> &copy; 2022</p>

@@ -24,7 +24,7 @@ function Header() {
   };
 
   return (
-    <nav className="flex justify-between items-center bg-gradient-to-l from-indigo-600 to-blue-300 mt-4 ml-2 mr-2 rounded-md xl:ml-16 xl:mr-16">
+    <nav className="flex justify-between items-center bg-gradient-to-r from-indigo-400 to-blue-400 mt-4 ml-2 mr-2 rounded-md">
       <div className='flex justify-center items-center w-80 mt-2 mb-2 ml-4'>
         <img
           className='rounded-lg w-20'
