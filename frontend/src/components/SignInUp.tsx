@@ -39,7 +39,7 @@ export function SignInUp(
               (
                 <div>
                   <div className='flex flex-col text-white font-bold py-2'>
-                    <label>Nome</label>
+                    <label htmlFor="name">Nome</label>
                     <input
                       className='rounded-lg text-gray-700 mt-2 p-2 focus:border-blue-500 focus:border-2 focus:outline-none'
                       id="name"
@@ -51,7 +51,7 @@ export function SignInUp(
                     />
                   </div>
                   <div className='flex flex-col text-white font-bold py-2'>
-                    <label>Telefone</label>
+                    <label htmlFor="fone">Telefone</label>
                     <input
                       className='rounded-lg text-gray-700 mt-2 p-2 focus:border-blue-500 focus:border-2 focus:outline-none'
                       id="fone"
@@ -66,7 +66,7 @@ export function SignInUp(
               )
             }
              <div className='flex flex-col text-white font-bold py-2'>
-               <label>Email</label>
+               <label htmlFor="email">Email</label>
                <input
                  className='rounded-lg mt-2 p-2 text-gray-700 focus:border-blue-500 focus:border-2 focus:outline-none'
                  id="email"
@@ -78,7 +78,7 @@ export function SignInUp(
                />
              </div>
              <div className='flex flex-col text-white font-bold py-2'>
-               <label>Password</label>
+               <label htmlFor="password">Password</label>
                <input
                  className='rounded-lg mt-2 p-2 text-gray-700 focus:border-blue-500 focus:border-2 focus:outline-none'
                  id="password"

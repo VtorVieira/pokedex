@@ -37,7 +37,7 @@ const validate = {
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (!regex.test(email)) {
-      throw new CustomErrors(400, 'Formato do e-mail invalido! Por favor, digite um e-mail valido! ');
+      throw new CustomErrors(400, 'Por favor insira um endereço de email válido! Ex: email@email.com');
     }
     next();
   },
@@ -46,7 +46,7 @@ const validate = {
     const { fone } = req.body;
     const regex = /^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/;
     if (!regex.test(fone)) {
-      throw new CustomErrors(400, 'Formato do telefone invalido! Por favor, digite um telefone valido! ');
+      throw new CustomErrors(400, 'Por favor, digite seu número de telefone no formato xx xxxx-xxxx');
     }
     next();
   },
