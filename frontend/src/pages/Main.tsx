@@ -78,7 +78,7 @@ function Main() {
         <div className='flex justify-center text-5xl p-2 gap-4'>
           { previous > 0
             && <div className='flex justify-center items-center'>
-              <p className='text-white font-bold text-lg' onClick={previousPage}>Página <br/>Anterior</p>
+              <p className='font-bold text-lg cursor-pointer' onClick={previousPage}>Página <br/>Anterior</p>
               <button type='button' onClick={previousPage}>
                 <GrCaretPrevious color='brand' />
               </button>
@@ -89,7 +89,7 @@ function Main() {
               <button type='button' onClick={nextPage}>
                 <GrCaretNext color='brand' /> 
               </button>
-              <p className='text-white font-bold text-lg' onClick={nextPage}>Proxima <br />Página</p>
+              <p className='font-bold text-lg cursor-pointer' onClick={nextPage}>Próxima <br />Página</p>
             </div>
           }
         </div>

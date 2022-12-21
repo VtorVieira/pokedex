@@ -19,7 +19,7 @@ export function SignInUp(
 
   return (
     <div
-      className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'
+      className='grid grid-cols-1 sm:grid-cols-2 h-screen w-screen'
     >
       {
        loading && <Loading />
@@ -41,7 +41,7 @@ export function SignInUp(
                   <div className='flex flex-col text-white font-bold py-2'>
                     <label>Nome</label>
                     <input
-                      className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
+                      className='rounded-lg text-gray-700 mt-2 p-2 focus:border-blue-500 focus:border-2 focus:outline-none'
                       id="name"
                       name="name"
                       value={form.name}
@@ -53,7 +53,7 @@ export function SignInUp(
                   <div className='flex flex-col text-white font-bold py-2'>
                     <label>Telefone</label>
                     <input
-                      className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
+                      className='rounded-lg text-gray-700 mt-2 p-2 focus:border-blue-500 focus:border-2 focus:outline-none'
                       id="fone"
                       name="fone"
                       value={form.fone}
@@ -68,19 +68,19 @@ export function SignInUp(
              <div className='flex flex-col text-white font-bold py-2'>
                <label>Email</label>
                <input
-                 className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
+                 className='rounded-lg mt-2 p-2 text-gray-700 focus:border-blue-500 focus:border-2 focus:outline-none'
                  id="email"
                  name="email"
                  value={form.email}
                  type="text"
-                 placeholder={formType === 'Sign In' ? 'name@example.com' : 'Cadastre o seu email'}
+                 placeholder={formType === 'Sign In' ? 'Informe o seu e-mail' : 'Cadastre o seu e-mail'}
                  onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
                />
              </div>
              <div className='flex flex-col text-white font-bold py-2'>
                <label>Password</label>
                <input
-                 className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
+                 className='rounded-lg mt-2 p-2 text-gray-700 focus:border-blue-500 focus:border-2 focus:outline-none'
                  id="password"
                  name="password"
                  value={form.password}
@@ -89,7 +89,7 @@ export function SignInUp(
                  onChange={handleChange as ChangeEventHandler<HTMLInputElement>}
                />
              </div>
-            <div className='border-l-2 font-bold'>
+            <div className='border-l-4 border-red-900 font-bold'>
               <p className=' text-[#ffff] ml-2'>{requestFailed.message}</p>
             </div>
           </div>
